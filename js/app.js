@@ -17,10 +17,10 @@ document.addEventListener('DOMContentLoaded', function(){
     const spinner = document.querySelector('#spinner');
 
     //AddEventListeners
-    inpuEmail.addEventListener('input', validar);
-    cc.addEventListener('input', validarCc);
-    inputAsunto.addEventListener('input', validar);
-    inputMensaje.addEventListener('input', validar);
+    inpuEmail.addEventListener('blur', validar);
+    cc.addEventListener('blur', validarCc);
+    inputAsunto.addEventListener('blur', validar);
+    inputMensaje.addEventListener('blur', validar);
     formulario.addEventListener('submit', enviarEmail);
     reset.addEventListener('click', function(e){
         e.preventDefault();
@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', function(){
         if(e.target.value.trim() === ''){
 
             mostrarAlerta(`El campo ${e.target.id} es obligatorio`, e.target.parentElement);
-            console.log(e.target.id);
+            console.log(e.target.parentElement);
 
             emailOb[e.target.name] = '';
             console.log(emailOb[e.target.name]);//Trae el valor del input
